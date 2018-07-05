@@ -44,7 +44,6 @@ extern "C"
 #define UART0_RST   ((0x4<<24) | SYS_IPRSTC2_UART0_RST_Pos ) /*!< UART0 reset is one of the SYS_ResetModule parameter */
 #define UART1_RST   ((0x4<<24) | SYS_IPRSTC2_UART1_RST_Pos ) /*!< UART1 reset is one of the SYS_ResetModule parameter */
 #define UART2_RST   ((0x4<<24) | SYS_IPRSTC2_UART2_RST_Pos ) /*!< UART2 reset is one of the SYS_ResetModule parameter */
-#define CAN0_RST    ((0x4<<24) | SYS_IPRSTC2_CAN0_RST_Pos  ) /*!< CAN0 reset is one of the SYS_ResetModule parameter */
 #define ADC_RST     ((0x4<<24) | SYS_IPRSTC2_ADC_RST_Pos   ) /*!< ADC reset is one of the SYS_ResetModule parameter */
 #define UART3_RST   ((0x8<<24) | SYS_IPRSTC3_UART3_RST_Pos ) /*!< UART3 reset is one of the SYS_ResetModule parameter */
 #define PWM0_RST    ((0x8<<24) | SYS_IPRSTC3_PWM0_RST_Pos )  /*!< PWM0 reset is one of the SYS_ResetModule parameter */
@@ -1238,13 +1237,6 @@ Example: If user want to set PA.0 as ADC0 and PA.1 as ADC1 in initial function,
 #define SYS_ALT_MFP3_PD6_GPIO       0x00000000UL        /*!< ALT_MFP3 PD.6 setting for GPIO */
 #define SYS_ALT_MFP4_PD6_GPIO       NULL                /*!< No ALT_MFP4 setting for PD.6 */
 
-#define SYS_GPD_MFP_PD6_CAN0_RXD    (1UL<<6)            /*!< GPD_MFP PD.6 setting for CAN0_RXD */
-#define SYS_ALT_MFP_PD6_CAN0_RXD    NULL                /*!< No ALT_MFP setting for PD.6 */
-#define SYS_ALT_MFP1_PD6_CAN0_RXD   NULL                /*!< No ALT_MFP1 setting for PD.6 */
-#define SYS_ALT_MFP2_PD6_CAN0_RXD   NULL                /*!< No ALT_MFP2 setting for PD.6 */
-#define SYS_ALT_MFP3_PD6_CAN0_RXD   0x00000000UL        /*!< ALT_MFP3 PD.6 setting for CAN0_RXD */
-#define SYS_ALT_MFP4_PD6_CAN0_RXD   NULL                /*!< No ALT_MFP4 setting for PD.6 */
-
 #define SYS_GPD_MFP_PD6_BPWM1_CH1   (1UL<<6)            /*!< GPD_MFP PD.6 setting for BPWM1_CH1 */
 #define SYS_ALT_MFP_PD6_BPWM1_CH1   NULL                /*!< No ALT_MFP setting for PD.6 */
 #define SYS_ALT_MFP1_PD6_BPWM1_CH1  NULL                /*!< No ALT_MFP1 setting for PD.6 */
@@ -1266,13 +1258,6 @@ Example: If user want to set PA.0 as ADC0 and PA.1 as ADC1 in initial function,
 #define SYS_ALT_MFP2_PD7_GPIO       NULL                /*!< No ALT_MFP2 setting for PD.7 */
 #define SYS_ALT_MFP3_PD7_GPIO       0x00000000UL        /*!< ALT_MFP3 PD.7 setting for GPIO */
 #define SYS_ALT_MFP4_PD7_GPIO       NULL                /*!< No ALT_MFP4 setting for PD.7 */
-
-#define SYS_GPD_MFP_PD7_CAN0_TXD    (1UL<<7)            /*!< GPD_MFP PD.7 setting for CAN0_TXD */
-#define SYS_ALT_MFP_PD7_CAN0_TXD    NULL                /*!< No ALT_MFP setting for PD.7 */
-#define SYS_ALT_MFP1_PD7_CAN0_TXD   NULL                /*!< No ALT_MFP1 setting for PD.7 */
-#define SYS_ALT_MFP2_PD7_CAN0_TXD   NULL                /*!< No ALT_MFP2 setting for PD.7 */
-#define SYS_ALT_MFP3_PD7_CAN0_TXD   0x00000000UL        /*!< ALT_MFP3 PD.7 setting for CAN0_TXD */
-#define SYS_ALT_MFP4_PD7_CAN0_TXD   NULL                /*!< No ALT_MFP4 setting for PD.7 */
 
 #define SYS_GPD_MFP_PD7_BPWM1_CH0   (1UL<<7)            /*!< GPD_MFP PD.7 setting for BPWM1_CH0 */
 #define SYS_ALT_MFP_PD7_BPWM1_CH0   NULL                /*!< No ALT_MFP setting for PD.7 */

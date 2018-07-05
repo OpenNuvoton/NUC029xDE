@@ -397,7 +397,6 @@ void CLK_DisableXtalRC(uint32_t u32ClkMask)
   *             - \ref PWM0_MODULE
   *             - \ref PWM1_MODULE
   *             - \ref ADC_MODULE
-  *             - \ref CAN0_MODULE
   * @return     None
   * @details    This function enable module clock.
   */
@@ -427,7 +426,6 @@ void CLK_EnableModuleClock(uint32_t u32ModuleIdx)
   *             - \ref PWM0_MODULE
   *             - \ref PWM1_MODULE
   *             - \ref ADC_MODULE
-  *             - \ref CAN0_MODULE
   * @return     None
   * @details    This function disable module clock.
   */
