@@ -15,7 +15,7 @@
 /*---------------------------------------------------------------------------------------------------------*/
 /* Define functions prototype                                                                              */
 /*---------------------------------------------------------------------------------------------------------*/
-int32_t main(void);
+int main(void);
 void UART_DataWakeUp(void);
 void UART_CTSWakeUp(void);
 void UART_PowerDown_TestItem(void);
