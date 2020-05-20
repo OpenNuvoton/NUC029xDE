@@ -6,6 +6,7 @@
  * @brief    NUC029xDE Series UART Interface Controller Driver Header File
  *
  * @note
+ * SPDX-License-Identifier: Apache-2.0
  * Copyright (C) 2018 Nuvoton Technology Corp. All rights reserved.
  *
  ******************************************************************************/
