@@ -180,7 +180,7 @@ int32_t main(void)
         The base address is 0x100000.
         The base address for function table is defined by FUN_TBL_BASE.
     */
-
+#if defined ( __ICCARM__ )
     printf("+------------------------------------------------------------------+\n");
     printf("|    NUC029xDE Flash Memory Controller Driver Sample Code for LDROM    |\n");
     printf("+------------------------------------------------------------------+\n");
@@ -196,7 +196,7 @@ int32_t main(void)
     printf("\n");
 
     printf("Function table @ 0x%08x\n", g_funcTable);
-
+#endif
     while(SYS->PDID)__WFI();
 }
 

@@ -58,12 +58,21 @@ void SYS_Init(void)
     SYS->GPB_MFP |= SYS_GPB_MFP_PB0_UART0_RXD | SYS_GPB_MFP_PB1_UART0_TXD;
 }
 
-void UART_Init()
+void UART0_Init()
 {
     /*---------------------------------------------------------------------------------------------------------*/
     /* Init UART                                                                                               */
     /*---------------------------------------------------------------------------------------------------------*/
-    UART_Open(UART0, 115200);
+    /*---------------------------------------------------------------------------------------------------------*/
+    /* Init UART                                                                                               */
+    /*---------------------------------------------------------------------------------------------------------*/
+    /* Reset IP */
+    SYS->IPRSTC2 |=  SYS_IPRSTC2_UART0_RST_Msk;
+    SYS->IPRSTC2 &= ~SYS_IPRSTC2_UART0_RST_Msk;
+
+    /* Configure UART0 and set UART0 Baudrate */
+    UART0->BAUD = UART_BAUD_MODE2 | UART_BAUD_MODE2_DIVIDER(PLL_CLOCK, 115200);
+    UART0->LCR = UART_WORD_LEN_8 | UART_PARITY_NONE | UART_STOP_BIT_1;
 }
 
 
@@ -75,7 +84,7 @@ int main()
     SYS_UnlockReg();
 
     SYS_Init();
-    UART_Init();
+    UART0_Init();
 
     printf("\n\n");
     printf("NUC029xDE FMC IAP Sample Code [LDROM code]\n");
@@ -83,8 +92,7 @@ int main()
     /* Enable FMC ISP function */
     FMC_Open();
 
-    printf("\n\nPress any key to branch to APROM...\n");
-    getchar();
+    printf("\n\nTo branch to APROM...\n");
 
     printf("\n\nChange VECMAP and branch to LDROM...\n");
     UART_WAIT_TX_EMPTY(UART0);
