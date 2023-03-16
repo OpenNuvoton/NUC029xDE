@@ -115,7 +115,7 @@ extern "C"
 #define UART_LIN_CTL_LIN_LIN_PID(x) ((x) << UART_LIN_CTL_LIN_PID_Pos)       /*!< UA_LIN_CTL setting to set LIN PID value */
 
 /*---------------------------------------------------------------------------------------------------------*/
-/* UART BAUDRATE MODE constants definitions                                                                       */
+/* UART BAUDRATE MODE constants definitions                                                                */
 /*---------------------------------------------------------------------------------------------------------*/
 #define UART_BAUD_MODE0     (0) /*!< Set UART Baudrate Mode is Mode0 */
 #define UART_BAUD_MODE2     (UART_BAUD_DIV_X_EN_Msk | UART_BAUD_DIV_X_ONE_Msk) /*!< Set UART Baudrate Mode is Mode2 */
@@ -181,7 +181,7 @@ extern "C"
 /**
  *    @brief        Get Tx empty
  *
- *    @param[in]    uart    The base address of UART module
+ *    @param[in]    uart    The pointer of the specified UART module
  *
  *    @retval       0   Tx FIFO is not empty
  *    @retval       >=1 Tx FIFO is empty
@@ -331,7 +331,7 @@ extern "C"
  *                              - UART_IER_RDA_IEN_Msk      : Rx ready interrupt
  *    @return       None
  *
- *    @details      This macro enable specified UART interrupt.
+ *    @details      This macro disable specified UART interrupt.
  */
 #define UART_DISABLE_INT(uart, u32eIntSel)    ((uart)->IER &= ~ (u32eIntSel))
 
