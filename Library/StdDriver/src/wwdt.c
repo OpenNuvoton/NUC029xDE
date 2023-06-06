@@ -20,7 +20,7 @@
   @{
 */
 
-/** @addtogroup NUC131_WWDT_EXPORTED_FUNCTIONS WWDT Exported Functions
+/** @addtogroup NUC029xDE_WWDT_EXPORTED_FUNCTIONS WWDT Exported Functions
   @{
 */
 
@@ -63,7 +63,7 @@ void WWDT_Open(uint32_t u32PreScale,
     return;
 }
 
-/*@}*/ /* end of group NUC131_WWDT_EXPORTED_FUNCTIONS */
+/*@}*/ /* end of group NUC029xDE_WWDT_EXPORTED_FUNCTIONS */
 
 /*@}*/ /* end of group WWDT_Driver */
 

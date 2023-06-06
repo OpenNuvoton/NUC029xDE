@@ -20,7 +20,7 @@
   @{
 */
 
-/** @addtogroup NUC131_TIMER_EXPORTED_FUNCTIONS TIMER Exported Functions
+/** @addtogroup NUC029xDE_TIMER_EXPORTED_FUNCTIONS TIMER Exported Functions
   @{
 */
 
@@ -284,7 +284,7 @@ uint32_t TIMER_GetModuleClock(TIMER_T *timer)
     return(au32Clk[u32Src]);
 }
 
-/*@}*/ /* end of group NUC131_TIMER_EXPORTED_FUNCTIONS */
+/*@}*/ /* end of group NUC029xDE_TIMER_EXPORTED_FUNCTIONS */
 
 /*@}*/ /* end of group TIMER_Driver */
 

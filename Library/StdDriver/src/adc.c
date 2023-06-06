@@ -19,7 +19,7 @@
   @{
 */
 
-/** @addtogroup NUC131_ADC_EXPORTED_FUNCTIONS ADC Exported Functions
+/** @addtogroup NUC029xDE_ADC_EXPORTED_FUNCTIONS ADC Exported Functions
   @{
 */
 
@@ -156,7 +156,7 @@ void ADC_DisableInt(ADC_T *adc, uint32_t u32Mask)
 
 
 
-/*@}*/ /* end of group NUC131_ADC_EXPORTED_FUNCTIONS */
+/*@}*/ /* end of group NUC029xDE_ADC_EXPORTED_FUNCTIONS */
 
 /*@}*/ /* end of group ADC_Driver */
 

@@ -26,7 +26,7 @@ extern "C"
 */
 
 
-/** @addtogroup NUC131_SYS_EXPORTED_FUNCTIONS SYS Exported Functions
+/** @addtogroup NUC029xDE_SYS_EXPORTED_FUNCTIONS SYS Exported Functions
   @{
 */
 
@@ -45,7 +45,7 @@ extern "C"
   */
 void SYS_ClearResetSrc(uint32_t u32Src)
 {
-    SYS->RSTSRC |= u32Src;
+    SYS->RSTSRC = u32Src;
 }
 
 /**
@@ -189,7 +189,7 @@ void SYS_DisableBOD(void)
 
 
 
-/*@}*/ /* end of group NUC131_SYS_EXPORTED_FUNCTIONS */
+/*@}*/ /* end of group NUC029xDE_SYS_EXPORTED_FUNCTIONS */
 
 /*@}*/ /* end of group SYS_Driver */
 

@@ -113,7 +113,7 @@ int main(void)
     if(WDT_GET_RESET_FLAG() == 1)
     {
         /* Use PA.0 to check time-out period time */
-        GPIO_SetMode(PA, 0, GPIO_PMD_OUTPUT);
+        GPIO_SetMode(PA, BIT0, GPIO_PMD_OUTPUT);
         PA0 = 1;
 
         WDT_CLEAR_RESET_FLAG();

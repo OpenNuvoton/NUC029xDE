@@ -13,7 +13,6 @@
 #include <stdio.h>
 #include "NUC029xDE.h"
 
-#define PLLCON_SETTING      CLK_PLLCON_50MHz_HXT
 #define PLL_CLOCK           50000000
 
 /*---------------------------------------------------------------------------------------------------------*/
@@ -60,6 +59,8 @@ void I2C0_IRQHandler(void)
 /*---------------------------------------------------------------------------------------------------------*/
 void I2C_MasterRx(uint32_t u32Status)
 {
+    uint32_t u32TimeOutCnt;
+
     if(u32Status == 0x08)                       /* START has been transmitted and prepare SLA+W */
     {
         I2C_SET_DATA(I2C0, (g_u8DeviceAddr << 1));    /* Write SLA+W to Register I2CDAT */
@@ -133,7 +134,9 @@ void I2C_MasterRx(uint32_t u32Status)
         g_u8MstRxAbortFlag = 1;
         getchar();
         I2C_SET_CONTROL_REG(I2C0, I2C_I2CON_SI);
-        while(I2C0->I2CON & I2C_I2CON_SI_Msk);
+        u32TimeOutCnt = I2C_TIMEOUT;
+        while(I2C0->I2CON & I2C_I2CON_SI_Msk)
+            if(--u32TimeOutCnt == 0) break;
     }
 }
 /*---------------------------------------------------------------------------------------------------------*/
@@ -141,6 +144,8 @@ void I2C_MasterRx(uint32_t u32Status)
 /*---------------------------------------------------------------------------------------------------------*/
 void I2C_MasterTx(uint32_t u32Status)
 {
+    uint32_t u32TimeOutCnt;
+
     if(u32Status == 0x08)                       /* START has been transmitted */
     {
         I2C_SET_DATA(I2C0, g_u8DeviceAddr << 1);    /* Write SLA+W to Register I2CDAT */
@@ -207,7 +212,9 @@ void I2C_MasterTx(uint32_t u32Status)
         g_u8MstTxAbortFlag = 1;
         getchar();
         I2C_SET_CONTROL_REG(I2C0, I2C_I2CON_SI);
-        while(I2C0->I2CON & I2C_I2CON_SI_Msk);
+        u32TimeOutCnt = I2C_TIMEOUT;
+        while(I2C0->I2CON & I2C_I2CON_SI_Msk)
+            if(--u32TimeOutCnt == 0) break;
     }
 }
 
@@ -416,11 +423,11 @@ int32_t main(void)
         and Byte Read operations, and check if the read data is equal to the programmed data.
     */
     printf("\n");
-    printf("+--------------------------------------------------------+\n");
+    printf("+-----------------------------------------------------------+\n");
     printf("| NUC029xDE I2C Driver Sample Code(Master) for access Slave |\n");
-    printf("|                                                        |\n");
-    printf("| I2C Master (I2C0) <---> I2C Slave(I2C0)                |\n");
-    printf("+--------------------------------------------------------+\n");
+    printf("|                                                           |\n");
+    printf("| I2C Master (I2C0) <---> I2C Slave(I2C0)                   |\n");
+    printf("+-----------------------------------------------------------+\n");
 
     printf("Configure I2C0 as a master.\n");
     printf("The I/O connection for I2C0:\n");

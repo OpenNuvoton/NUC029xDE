@@ -24,7 +24,7 @@ extern "C"
   @{
 */
 
-/** @addtogroup NUC131_UART_Driver UART Driver
+/** @addtogroup NUC029xDE_UART_Driver UART Driver
   @{
 */
 
@@ -95,7 +95,7 @@ extern "C"
 #define UART_FUNC_SEL_RS485   (0x3 << UART_FUN_SEL_FUN_SEL_Pos) /*!< UA_FUNC_SEL setting to set RS485 Function           */
 
 /*---------------------------------------------------------------------------------------------------------*/
-/* UA_LIN_CTL constants definitions                                                                       */
+/* UA_LIN_CTL constants definitions                                                                        */
 /*---------------------------------------------------------------------------------------------------------*/
 #define UART_LIN_CTL_LINS_EN        (0x1UL << UART_LIN_CTL_LINS_EN_Pos)       /*!< UA_LIN_CTL setting to set LIN Slave Mode Enable */
 #define UART_LIN_CTL_LINS_HDET_EN   (0x1UL << UART_LIN_CTL_LINS_HDET_EN_Pos)  /*!< UA_LIN_CTL setting to set LIN Slave Header Detection Enable */
@@ -124,7 +124,7 @@ extern "C"
 /*@}*/ /* end of group UART_EXPORTED_CONSTANTS */
 
 
-/** @addtogroup NUC131_UART_EXPORTED_FUNCTIONS UART Exported Functions
+/** @addtogroup NUC029xDE_UART_EXPORTED_FUNCTIONS UART Exported Functions
   @{
 */
 
@@ -208,7 +208,7 @@ extern "C"
  *
  *    @param[in]    uart    The pointer of the specified UART module.
  *
- *    @retval       0   Transmission is not over.
+ *    @retval       0 Transmission is not over.
  *    @retval       1 Transmission is over.
  *
  *    @details      This macro return if Tx FIFO is empty and specified uart port transmission is over nor not.
@@ -296,16 +296,16 @@ extern "C"
  *
  *    @param[in]    uart        The pointer of the specified UART module.
  *    @param[in]    u32eIntSel  Interrupt type select
- *                              - UART_IER_AERIEN_Msk       : Auto baud rate interrupt
- *                              - UART_IER_WKDATIEN_Msk     : Data wakeup interrupt
- *                              - UART_IER_LIN_IEN_Msk      : Lin bus interrupt
- *                              - UART_IER_WKCTSIEN_Msk     : CTS wakeup interrupt
- *                              - UART_IER_BUF_ERR_IEN_Msk  : Buffer Error interrupt
- *                              - UART_IER_TOUT_IEN_Msk     : Rx time-out interrupt
- *                              - UART_IER_MODEM_IEN_Msk    : Modem interrupt
- *                              - UART_IER_RLS_IEN_Msk      : Rx Line status interrupt
- *                              - UART_IER_THRE_IEN_Msk     : Tx empty interrupt
- *                              - UART_IER_RDA_IEN_Msk      : Rx ready interrupt
+ *                              - \ref UART_IER_AERIEN_Msk       : Auto baud rate interrupt
+ *                              - \ref UART_IER_WKDATIEN_Msk     : Data wakeup interrupt
+ *                              - \ref UART_IER_LIN_IEN_Msk      : Lin bus interrupt
+ *                              - \ref UART_IER_WKCTSIEN_Msk     : CTS wakeup interrupt
+ *                              - \ref UART_IER_BUF_ERR_IEN_Msk  : Buffer Error interrupt
+ *                              - \ref UART_IER_TOUT_IEN_Msk     : Rx time-out interrupt
+ *                              - \ref UART_IER_MODEM_IEN_Msk    : Modem interrupt
+ *                              - \ref UART_IER_RLS_IEN_Msk      : Rx Line status interrupt
+ *                              - \ref UART_IER_THRE_IEN_Msk     : Tx empty interrupt
+ *                              - \ref UART_IER_RDA_IEN_Msk      : Rx ready interrupt
  *
  *    @return       None
  *
@@ -319,16 +319,16 @@ extern "C"
  *
  *    @param[in]    uart        The pointer of the specified UART module.
  *    @param[in]    u32eIntSel  Interrupt type select
- *                              - UART_IER_AERIEN_Msk       : Auto baud rate interrupt
- *                              - UART_IER_WKDATIEN_Msk     : Data wakeup interrupt
- *                              - UART_IER_LIN_IEN_Msk      : Lin bus interrupt
- *                              - UART_IER_WKCTSIEN_Msk     : CTS wakeup interrupt
- *                              - UART_IER_BUF_ERR_IEN_Msk  : Buffer Error interrupt
- *                              - UART_IER_TOUT_IEN_Msk     : Rx time-out interrupt
- *                              - UART_IER_MODEM_IEN_Msk    : Modem interrupt
- *                              - UART_IER_RLS_IEN_Msk      : Rx Line status interrupt
- *                              - UART_IER_THRE_IEN_Msk     : Tx empty interrupt
- *                              - UART_IER_RDA_IEN_Msk      : Rx ready interrupt
+ *                              - \ref UART_IER_AERIEN_Msk       : Auto baud rate interrupt
+ *                              - \ref UART_IER_WKDATIEN_Msk     : Data wakeup interrupt
+ *                              - \ref UART_IER_LIN_IEN_Msk      : Lin bus interrupt
+ *                              - \ref UART_IER_WKCTSIEN_Msk     : CTS wakeup interrupt
+ *                              - \ref UART_IER_BUF_ERR_IEN_Msk  : Buffer Error interrupt
+ *                              - \ref UART_IER_TOUT_IEN_Msk     : Rx time-out interrupt
+ *                              - \ref UART_IER_MODEM_IEN_Msk    : Modem interrupt
+ *                              - \ref UART_IER_RLS_IEN_Msk      : Rx Line status interrupt
+ *                              - \ref UART_IER_THRE_IEN_Msk     : Tx empty interrupt
+ *                              - \ref UART_IER_RDA_IEN_Msk      : Rx ready interrupt
  *    @return       None
  *
  *    @details      This macro disable specified UART interrupt.
@@ -339,10 +339,10 @@ extern "C"
 /**
  *    @brief        Get specified interrupt indicator status
  *
- *    @param[in]    uart            Get specified interrupt flag/status
+ *    @param[in]    uart            The pointer of the specified UART module
  *    @param[in]    u32eIntTypeFlag Interrupt Type Flag, should be
- *                                  - \ref UART_ISR_DATWKIF_Msk     : Data Wake-Up Interrupt Flag
- *                                  - \ref UART_ISR_CTSWKIF_Msk     : nCTS Wake-Up Interrupt Flag 
+ *                                  - \ref UART_ISR_DATWKIF_Msk     : Data Wake-up Interrupt Flag
+ *                                  - \ref UART_ISR_CTSWKIF_Msk     : nCTS Wake-up Interrupt Flag
  *                                  - \ref UART_ISR_LIN_INT_Msk     : LIN Bus Interrupt Indicator
  *                                  - \ref UART_ISR_BUF_ERR_INT_Msk : Buffer Error Interrupt Indicator
  *                                  - \ref UART_ISR_TOUT_INT_Msk    : Time-out Interrupt Indicator
@@ -351,7 +351,7 @@ extern "C"
  *                                  - \ref UART_ISR_THRE_INT_Msk    : Transmit Holding Register Empty Interrupt Indicator
  *                                  - \ref UART_ISR_RDA_INT_Msk     : Receive Data Available Interrupt Indicator
  *                                  - \ref UART_ISR_LIN_IF_Msk      : LIN Bus Interrupt Flag
- *                                  - \ref UART_ISR_WKIF_Msk        : UART Wake-Up Flag 
+ *                                  - \ref UART_ISR_WKIF_Msk        : UART Wake-up Flag
  *                                  - \ref UART_ISR_BUF_ERR_IF_Msk  : Buffer Error Interrupt Flag
  *                                  - \ref UART_ISR_TOUT_IF_Msk     : Rx Time-out Interrupt Flag
  *                                  - \ref UART_ISR_MODEM_IF_Msk    : Modem Interrupt Flag
@@ -422,7 +422,7 @@ __STATIC_INLINE void UART_SET_RTS(UART_T* uart)
 #define UART_RS485_GET_ADDR_FLAG(uart)    (((uart)->FSR  & UART_FSR_RS485_ADD_DETF_Msk) >> UART_FSR_RS485_ADD_DETF_Pos)
 
 
-void UART_ClearIntFlag(UART_T* uart , uint32_t u32InterruptFlag);
+void UART_ClearIntFlag(UART_T* uart, uint32_t u32InterruptFlag);
 void UART_Close(UART_T* uart);
 void UART_DisableFlowCtrl(UART_T* uart);
 void UART_DisableInt(UART_T*  uart, uint32_t u32InterruptFlag);
@@ -438,9 +438,9 @@ void UART_SelectLINMode(UART_T* uart, uint32_t u32Mode, uint32_t u32BreakLength)
 uint32_t UART_Write(UART_T* uart, uint8_t *pu8TxBuf, uint32_t u32WriteBytes);
 
 
-/*@}*/ /* end of group NUC131_UART_EXPORTED_FUNCTIONS */
+/*@}*/ /* end of group NUC029xDE_UART_EXPORTED_FUNCTIONS */
 
-/*@}*/ /* end of group NUC131_UART_Driver */
+/*@}*/ /* end of group NUC029xDE_UART_Driver */
 
 /*@}*/ /* end of group NUC029xDE_Device_Driver */
 

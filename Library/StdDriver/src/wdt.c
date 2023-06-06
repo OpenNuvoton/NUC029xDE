@@ -20,7 +20,7 @@
   @{
 */
 
-/** @addtogroup NUC131_WDT_EXPORTED_FUNCTIONS WDT Exported Functions
+/** @addtogroup NUC029xDE_WDT_EXPORTED_FUNCTIONS WDT Exported Functions
   @{
 */
 
@@ -41,7 +41,7 @@
   *                                 - \ref WDT_RESET_DELAY_130CLK
   *                                 - \ref WDT_RESET_DELAY_18CLK
   *                                 - \ref WDT_RESET_DELAY_3CLK
-  * @param[in]  u32EnableReset      Enable WDT time-out rest system function. Valid values are TRUE and FALSE.
+  * @param[in]  u32EnableReset      Enable WDT time-out reset system function. Valid values are TRUE and FALSE.
   * @param[in]  u32EnableWakeup     Enable WDT time-out wake-up system function. Valid values are TRUE and FALSE.
   *
   * @return     None
@@ -63,7 +63,7 @@ void WDT_Open(uint32_t u32TimeoutInterval,
     return;
 }
 
-/*@}*/ /* end of group NUC131_WDT_EXPORTED_FUNCTIONS */
+/*@}*/ /* end of group NUC029xDE_WDT_EXPORTED_FUNCTIONS */
 
 /*@}*/ /* end of group WDT_Driver */
 

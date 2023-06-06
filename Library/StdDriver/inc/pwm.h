@@ -129,7 +129,7 @@ extern "C"
 /*@}*/ /* end of group PWM_EXPORTED_CONSTANTS */
 
 
-/** @addtogroup NUC131_PWM_EXPORTED_FUNCTIONS PWM Exported Functions
+/** @addtogroup NUC029xDE_PWM_EXPORTED_FUNCTIONS PWM Exported Functions
   @{
 */
 
@@ -434,7 +434,7 @@ uint32_t PWM_GetWrapAroundFlag(PWM_T *pwm, uint32_t u32ChannelNum);
 void PWM_ClearWrapAroundFlag(PWM_T *pwm, uint32_t u32ChannelNum);
 
 
-/*@}*/ /* end of group NUC131_PWM_EXPORTED_FUNCTIONS */
+/*@}*/ /* end of group NUC029xDE_PWM_EXPORTED_FUNCTIONS */
 
 /*@}*/ /* end of group PWM_Driver */
 

@@ -187,7 +187,7 @@ static __INLINE void WDT_DisableInt(void)
 
 void WDT_Open(uint32_t u32TimeoutInterval, uint32_t u32ResetDelay, uint32_t u32EnableReset, uint32_t u32EnableWakeup);
 
-/*@}*/ /* end of group NUC131_WDT_EXPORTED_FUNCTIONS */
+/*@}*/ /* end of group NUC029xDE_WDT_EXPORTED_FUNCTIONS */
 
 /*@}*/ /* end of group WDT_Driver */
 

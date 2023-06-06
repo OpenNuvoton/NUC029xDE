@@ -25,10 +25,14 @@ volatile uint8_t g_u8IsWDTWakeupINT = 0;
 /*---------------------------------------------------------------------------------------------------------*/
 void PowerDownFunction(void)
 {
+    uint32_t u32TimeOutCnt;
+
     printf("System enter to power-down mode.\n\n");
 
     /* To check if all the debug messages are finished */
-    while(IsDebugFifoEmpty() == 0);
+    u32TimeOutCnt = SystemCoreClock; /* 1 second time-out */
+    while(IsDebugFifoEmpty() == 0)
+        if(--u32TimeOutCnt == 0) break;
 
     SCB->SCR = 4;
 
@@ -120,6 +124,8 @@ void UART0_Init(void)
 /*---------------------------------------------------------------------------------------------------------*/
 int main(void)
 {
+    uint32_t u32TimeOutCnt;
+
     /* Unlock protected registers */
     SYS_UnlockReg();
 
@@ -156,7 +162,7 @@ int main(void)
        To program it needs to disable register protection first. */
     SYS_UnlockReg();
 
-    /* Enable WDT wake-up function and select time-out interval to 2^16 * WDT clock then start WDT counting */
+    /* Enable WDT wake-up function and select time-out interval to 2^14 * WDT clock then start WDT counting */
     g_u8IsWDTWakeupINT = 0;
     WDT_Open(WDT_TIMEOUT_2POW14, WDT_RESET_DELAY_1026CLK, FALSE, TRUE);
 
@@ -170,10 +176,17 @@ int main(void)
     PowerDownFunction();
 
     /* Check if WDT time-out interrupt and wake-up interrupt flag occurred */
+    u32TimeOutCnt = SystemCoreClock; /* 1 second time-out */
     while(1)
     {
         if(((CLK->PWRCON & CLK_PWRCON_PD_WU_STS_Msk) == CLK_PWRCON_PD_WU_STS_Msk) && (g_u8IsWDTWakeupINT == 1))
             break;
+
+        if(--u32TimeOutCnt == 0)
+        {
+            printf("Wait for System or WDT interrupt time-out!\n");
+            break;
+        }
     }
 
     PA0 = 1;

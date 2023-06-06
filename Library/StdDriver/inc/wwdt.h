@@ -57,7 +57,7 @@ extern "C"
 /*@}*/ /* end of group WWDT_EXPORTED_CONSTANTS */
 
 
-/** @addtogroup NUC131_WWDT_EXPORTED_FUNCTIONS WWDT Exported Functions
+/** @addtogroup NUC029xDE_WWDT_EXPORTED_FUNCTIONS WWDT Exported Functions
   @{
 */
 
@@ -134,7 +134,7 @@ extern "C"
 
 void WWDT_Open(uint32_t u32PreScale, uint32_t u32CmpValue, uint32_t u32EnableInt);
 
-/*@}*/ /* end of group NUC131_WWDT_EXPORTED_FUNCTIONS */
+/*@}*/ /* end of group NUC029xDE_WWDT_EXPORTED_FUNCTIONS */
 
 /*@}*/ /* end of group WWDT_Driver */
 

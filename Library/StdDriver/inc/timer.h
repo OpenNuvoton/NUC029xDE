@@ -47,7 +47,7 @@ extern "C"
 /*@}*/ /* end of group TIMER_EXPORTED_CONSTANTS */
 
 
-/** @addtogroup NUC131_TIMER_EXPORTED_FUNCTIONS TIMER Exported Functions
+/** @addtogroup NUC029xDE_TIMER_EXPORTED_FUNCTIONS TIMER Exported Functions
   @{
 */
 
@@ -385,7 +385,7 @@ void TIMER_EnableEventCounter(TIMER_T *timer, uint32_t u32Edge);
 void TIMER_DisableEventCounter(TIMER_T *timer);
 uint32_t TIMER_GetModuleClock(TIMER_T *timer);
 
-/*@}*/ /* end of group NUC131_TIMER_EXPORTED_FUNCTIONS */
+/*@}*/ /* end of group NUC029xDE_TIMER_EXPORTED_FUNCTIONS */
 
 /*@}*/ /* end of group TIMER_Driver */
 

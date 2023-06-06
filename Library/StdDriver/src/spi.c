@@ -19,7 +19,7 @@
 */
 
 
-/** @addtogroup NUC131_SPI_EXPORTED_FUNCTIONS SPI Exported Functions
+/** @addtogroup NUC029xDE_SPI_EXPORTED_FUNCTIONS SPI Exported Functions
   @{
 */
 
@@ -518,7 +518,7 @@ uint32_t SPI_GetStatus(SPI_T *spi, uint32_t u32Mask)
     return u32Flag;
 }
 
-/*@}*/ /* end of group NUC131_SPI_EXPORTED_FUNCTIONS */
+/*@}*/ /* end of group NUC029xDE_SPI_EXPORTED_FUNCTIONS */
 
 /*@}*/ /* end of group SPI_Driver */
 

@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include "NUC029xDE.h"
 
-#define PLLCON_SETTING      CLK_PLLCON_50MHz_HXT
+
 #define PLL_CLOCK           50000000
 
 
@@ -199,7 +199,7 @@ int main()
 
     printf("\n\n");
     printf("+----------------------------------------+\n");
-    printf("|          NUC029xDE FMC Sample Code        |\n");
+    printf("|        NUC029xDE FMC Sample Code       |\n");
     printf("+----------------------------------------+\n");
 
     //SYS_UnlockReg();

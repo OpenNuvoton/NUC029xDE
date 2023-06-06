@@ -194,7 +194,7 @@ int ParseCmd(unsigned char *buffer, uint8_t len)
         }
 
         TotalLen -= srclen;
-        WriteData(StartAddress, StartAddress + srclen, (uint32_t *)pSrc); //WriteData(StartAddress, StartAddress + srclen, (uint32_t*)pSrc);
+        WriteData(StartAddress, StartAddress + srclen, (uint32_t *)pSrc);
         memset(pSrc, 0, srclen);
         ReadData(StartAddress, StartAddress + srclen, (uint32_t *)pSrc);
         StartAddress += srclen;
