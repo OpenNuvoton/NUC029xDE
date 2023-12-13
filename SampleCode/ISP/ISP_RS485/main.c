@@ -7,7 +7,8 @@
              sample code to connect with chip RS485 and assign update file
              of Flash.
  * @note
- * Copyright (C) 2019 Nuvoton Technology Corp. All rights reserved.
+ * @copyright SPDX-License-Identifier: Apache-2.0
+ * @copyright Copyright (C) 2018 Nuvoton Technology Corp. All rights reserved.
  ******************************************************************************/
 #include <stdio.h>
 #include "isp_user.h"
@@ -19,6 +20,15 @@
 #define nRTSPin                 (PB6)
 #define REVEIVE_MODE            (0)
 #define TRANSMIT_MODE           (1)
+
+/*---------------------------------------------------------------------------------------------------------*/
+/* Define functions prototype                                                                              */
+/*---------------------------------------------------------------------------------------------------------*/
+void ProcessHardFault(void);
+void SH_Return(void);
+
+void ProcessHardFault(void){}
+void SH_Return(void){}
 
 int32_t SYS_Init(void)
 {

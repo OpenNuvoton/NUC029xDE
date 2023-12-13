@@ -6,8 +6,9 @@
  * @brief    M058S Series Flash Memory Controller Driver Sample Code on LDROM
  *
  * @note
- * Copyright (C) 2011 Nuvoton Technology Corp. All rights reserved.
+ * @copyright SPDX-License-Identifier: Apache-2.0
  *
+ * @copyright Copyright (C) 2018 Nuvoton Technology Corp. All rights reserved.
  ******************************************************************************/
 #include <stdio.h>
 #include "NUC029xDE.h"

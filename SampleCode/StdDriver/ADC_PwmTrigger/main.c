@@ -5,8 +5,9 @@
  * $Date: 14/06/30 4:51p $
  * @brief    Demonstrate how to trigger ADC by PWM.
  * @note
- * Copyright (C) 2018 Nuvoton Technology Corp. All rights reserved.
+ * @copyright SPDX-License-Identifier: Apache-2.0
  *
+ * @copyright Copyright (C) 2018 Nuvoton Technology Corp. All rights reserved.
  ******************************************************************************/
 #include <stdio.h>
 #include "NUC029xDE.h"
@@ -81,7 +82,7 @@ void SYS_Init(void)
     SYS->GPA_MFP |= SYS_GPA_MFP_PA0_ADC0 | SYS_GPA_MFP_PA1_ADC1 | SYS_GPA_MFP_PA2_ADC2 | SYS_GPA_MFP_PA3_ADC3 ;
 
     /* Configure the PA12 as PWM0 output pin */
-    SYS->GPA_MFP &= ~(SYS_GPA_MFP_PA12_Msk);
+    SYS->GPA_MFP = (SYS->GPA_MFP & (~SYS_GPA_MFP_PA12_Msk));
     SYS->GPA_MFP |= SYS_GPA_MFP_PA12_PWM0_CH0;
 }
 
@@ -185,7 +186,7 @@ void ADC_PWMTrigTest_SingleOpMode()
     /* Clear the ADC interrupt flag */
     ADC_CLR_INT_FLAG(ADC, ADC_ADF_INT);
 
-    printf("Channel 2: 0x%X\n", ADC_GET_CONVERSION_DATA(ADC, 2));
+    printf("Channel 2: 0x%X\n", (unsigned int)ADC_GET_CONVERSION_DATA(ADC, 2));
 
     /* Disable ADC */
     ADC_POWER_DOWN(ADC);

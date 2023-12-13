@@ -5,7 +5,8 @@
  * $Date: 15/01/16 11:44a $
  * @brief    Implement periodic WDT time-out interrupt event.
  * @note
- * Copyright (C) 2018 Nuvoton Technology Corp. All rights reserved.
+ * @copyright SPDX-License-Identifier: Apache-2.0
+ * @copyright Copyright (C) 2018 Nuvoton Technology Corp. All rights reserved.
  ******************************************************************************/
 #include <stdio.h>
 #include "NUC029xDE.h"

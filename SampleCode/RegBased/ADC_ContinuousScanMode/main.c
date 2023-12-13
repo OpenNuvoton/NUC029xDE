@@ -5,8 +5,9 @@
  * $Date: 15/01/15 1:25p $
  * @brief    Perform A/D Conversion with ADC continuous scan mode.
  * @note
- * Copyright (C) 2018 Nuvoton Technology Corp. All rights reserved.
+ * @copyright SPDX-License-Identifier: Apache-2.0
  *
+ * @copyright Copyright (C) 2018 Nuvoton Technology Corp. All rights reserved.
  ******************************************************************************/
 #include <stdio.h>
 #include "NUC029xDE.h"

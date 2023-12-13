@@ -5,16 +5,20 @@
  * $Date: 15/11/03 9:27a $
  * @brief    Show how to debug with semi-host message print.
  * @note
- * Copyright (C) 2018 Nuvoton Technology Corp. All rights reserved.
+ * @copyright SPDX-License-Identifier: Apache-2.0
  *
+ * @copyright Copyright (C) 2018 Nuvoton Technology Corp. All rights reserved.
  *****************************************************************************/
 
 #include <stdio.h>
 #include "NUC029xDE.h"
-
-# if defined (__GNUC__)
-    extern void initialise_monitor_handles(void);
+#if (defined (__GNUC__) && (!(defined(__ARMCC_VERSION))))
+extern void initialise_monitor_handles(void);
 #endif
+
+
+void ProcessHardFault(void);
+void ProcessHardFault(void){}
 /*---------------------------------------------------------------------------------------------------------*/
 /* Main Function                                                                                           */
 /*---------------------------------------------------------------------------------------------------------*/
