@@ -147,7 +147,7 @@ HardFault_Handler\
     PUBWEAK CKD_IRQHandler      
     PUBWEAK RTC_IRQHandler  
     SECTION .text:CODE:REORDER:NOROOT(2)
-HardFault_Handler 
+;HardFault_Handler 
 NMI_Handler       
 SVC_Handler       
 PendSV_Handler    
