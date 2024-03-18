@@ -294,6 +294,10 @@ uint32_t SPI_GetStatus(SPI_T *spi, uint32_t u32Mask);
   * @} End of NUC029xDE Function Interface
   */
 
+#ifdef __cplusplus
+}
+#endif
+
 
 #endif
 

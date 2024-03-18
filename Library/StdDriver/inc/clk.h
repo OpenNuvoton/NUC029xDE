@@ -393,6 +393,9 @@ void CLK_DisableSysTick(void);
 
 /*@}*/ /* end of group NUC029xDE_Device_Driver */
 
+#ifdef __cplusplus
+}
+#endif
 
 
 #endif //__CLK_H__
